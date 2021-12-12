@@ -1,0 +1,49 @@
+.leftNavContainer{
+    display: flex;
+    /* width: 100%; */
+    align-items: center;
+    
+}
+
+.barIcon{
+    display: flex;
+    width:10px;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.barIcons{
+    width: 100%;
+    background: var(--dark-blue-color);
+    height: 2px;
+    margin-bottom: 1px;
+
+}
+
+.imgLogoContainer{
+    margin-right: 6px;
+}
+
+.leftNavText h5{
+    text-transform: capitalize;
+}
+
+@media(min-width: 500px){
+    .barIcon{
+        margin-right: 8px;
+    }
+
+    .imgLogoContainer{
+        margin-right: 9px;
+    }
+}
+
+@media(min-width: 768px){
+    .barIcon{
+        margin-right: 10px;
+    }
+
+    .imgLogoContainer{
+        margin-right: 11px;
+    }
+}

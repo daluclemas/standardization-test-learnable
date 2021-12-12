@@ -1,0 +1,265 @@
+nav{
+
+    border: 2px hidden green;
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    width: 100%;
+    padding-top:1%;
+    padding-bottom: 1%;
+
+}
+
+.companyNameandLogo{
+    display: flex;
+    width:200px;
+    border: 1px hidden red;
+   
+}
+
+.companyName{
+    color:var(--blue-color);
+    width: 100%;
+    cursor: pointer;
+}
+
+.companyNameandLogo img{
+
+    display: none;
+    cursor: pointer;
+}
+
+.icon{
+
+    width:25px;
+    display: none;
+    flex-direction: column;
+    align-items:flex-end;
+    cursor: pointer;
+    
+}
+
+.hamburgerIcon{
+
+    width: 100%;
+    height: 3.5px;
+    background: var(--dark-blue-color);
+    margin-bottom:2px;
+    border-radius: 5px;
+    
+}
+
+.hamburgerIcon.active{
+    background: var(--blue-color);
+    z-index:2;
+}
+
+.hamburgerIcon:nth-child(2){
+    width:80%;
+}
+
+
+.hamburgerIcon:nth-child(3){
+    width:70%;
+}
+
+.listGroup{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid ; */
+}
+
+.unorderedLists{
+    list-style-type: none;
+    padding: 0;
+    margin:0 0 0 5px;
+    display: flex;
+}
+
+.unorderedLists li{
+    width:100%;
+    font-weight: 700;
+    cursor: pointer;
+    
+}
+
+.unorderedLists li:hover{
+    
+    padding-bottom: 2px;
+    border-bottom: 1px dashed var(--blue-color);
+}
+
+.unorderedLists li:nth-child(2){
+
+    margin-left: 15px;
+
+}
+
+
+.btnContainers{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.signUpContainer{
+    margin-right: 10px;
+    width: 100px;
+    height: 40px;
+    
+}
+
+.signUp{
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    background:transparent;
+    border:0;
+    font-weight: 700;
+    cursor: pointer;
+    
+}
+
+.signUp:hover{
+    border: 1px solid var(--blue-color);
+    box-shadow:0.5px 0.5px 6px var(--blue-color);
+    border-radius: 5px;
+    font-weight: 900;
+}
+
+.signUp::first-letter{
+
+    text-transform: uppercase;
+
+}
+
+.signInContainer{
+    margin-right: 10px;
+    width: 100px;
+    height: 40px;
+    
+}
+
+.signIn{
+    outline: none;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    background:var(--blue-color);
+    color: white;
+    font-weight: 700;
+    border:0;
+    box-shadow: 1px 1px 6px var(--blue-color);
+    border-radius:8px;
+    cursor: pointer;
+    
+}
+
+.signIn:hover{
+
+    box-shadow: 0.5px 0.5px 3px var(--blue-color);
+
+}
+
+.signIn::first-letter{
+
+    text-transform: uppercase;
+
+}
+
+
+
+@media(max-width: 768px){
+
+    nav{
+        justify-content: space-between;
+    }
+
+    .icon{
+        display: flex;
+        position: relative;
+    }
+
+    .companyName{
+        display: none
+    }
+
+    .companyNameandLogo img{
+
+        display: block;
+    }
+
+    .listGroup{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top:9%;
+        border-bottom: 1px solid var(--dark-blue-color);
+        border-right: 1px solid var(--dark-blue-color);
+        border-radius: 15px;
+        box-shadow: 2px 2px 6px 999px rgba(9, 30, 66, 0.2);;
+        /* z-index: 2; */
+        width:93% ;
+        margin: auto;
+        justify-content: flex-start;
+        background-color: white;
+           
+    }
+
+    
+
+    .listGroup.active{
+        display: flex;
+        z-index: 2;
+    }
+
+    .unorderedLists{
+        flex-direction:column;
+    }
+
+    .unorderedLists li:nth-child(1){
+
+        margin-top: 20px;
+    
+    }
+
+    .unorderedLists li:nth-child(2){
+
+        margin-left: 0;
+    
+    }
+
+    .unorderedLists li{
+        
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .btnContainers{
+        
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .signUpContainer{
+       
+        margin: 0px auto 20px;
+        
+     }
+
+
+    .signInContainer{
+       
+        margin: 0px auto 20px;
+        /* border: 3px solid blue; */
+    }
+
+
+}

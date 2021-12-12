@@ -1,0 +1,10 @@
+.rightNavContainer img {
+   margin-right: 5px; 
+}
+
+@media(min-width: 768px){
+
+    .rightNavContainer img {
+        margin-right: 10px; 
+    }
+}

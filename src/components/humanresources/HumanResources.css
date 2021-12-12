@@ -1,0 +1,55 @@
+.humanResources{
+
+	width: 95%;
+	border: 1px hidden blue;
+	margin: 30px auto 10px; 
+	grid-column: span 12;
+	padding-bottom: 10px;
+
+}
+
+.humanresourcetext{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.humanresourcetext h1{
+	text-transform: capitalize;
+	width:100%;
+	margin-bottom: 20px;
+}
+
+.humanresourcetext p::first-letter{
+	text-transform: uppercase;
+	
+}
+
+.humanresourcetext p{
+	width: 100%;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+
+.cardsContainer{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+}
+
+@media(min-width:768px){
+	.cardsContainer{
+		grid-column-gap:0.1px;
+	}
+}
+
+@media(min-width: 992px){
+
+	.humanresourcetext p{
+		width: 450px;
+		
+	}
+
+}
+
+
