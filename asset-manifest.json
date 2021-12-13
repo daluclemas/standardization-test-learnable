@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/standardization-test-learnable/static/css/main.79939264.chunk.css",
+    "main.css": "/standardization-test-learnable/static/css/main.ded53c33.chunk.css",
     "main.js": "/standardization-test-learnable/static/js/main.f52a854b.chunk.js",
     "main.js.map": "/standardization-test-learnable/static/js/main.f52a854b.chunk.js.map",
     "runtime-main.js": "/standardization-test-learnable/static/js/runtime-main.1da48bbe.js",
@@ -8,7 +8,7 @@
     "static/js/2.7e8f6541.chunk.js": "/standardization-test-learnable/static/js/2.7e8f6541.chunk.js",
     "static/js/2.7e8f6541.chunk.js.map": "/standardization-test-learnable/static/js/2.7e8f6541.chunk.js.map",
     "index.html": "/standardization-test-learnable/index.html",
-    "static/css/main.79939264.chunk.css.map": "/standardization-test-learnable/static/css/main.79939264.chunk.css.map",
+    "static/css/main.ded53c33.chunk.css.map": "/standardization-test-learnable/static/css/main.ded53c33.chunk.css.map",
     "static/js/2.7e8f6541.chunk.js.LICENSE.txt": "/standardization-test-learnable/static/js/2.7e8f6541.chunk.js.LICENSE.txt",
     "static/media/Avatar.ba7c7fc7.svg": "/standardization-test-learnable/static/media/Avatar.ba7c7fc7.svg",
     "static/media/Group6.ad2b2546.svg": "/standardization-test-learnable/static/media/Group6.ad2b2546.svg",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.1da48bbe.js",
     "static/js/2.7e8f6541.chunk.js",
-    "static/css/main.79939264.chunk.css",
+    "static/css/main.ded53c33.chunk.css",
     "static/js/main.f52a854b.chunk.js"
   ]
 }
