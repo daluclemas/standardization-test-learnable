@@ -8,9 +8,9 @@ const EmployeeCards = ({items}) => {
 				<img src={items.avatar} alt="img" />
 			</div>
 
-			<h3>{items.name}</h3>
+			<h5>{items.name}</h5>
 
-			<div></div>
+			<div className="cardsBar"></div>
 			
 		</div>
     )

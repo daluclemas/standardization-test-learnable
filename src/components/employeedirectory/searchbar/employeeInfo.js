@@ -7,7 +7,7 @@ import imageworker from '../../assets/std/imageworker.png'
 const employeeData = [
     {
 
-    name:'kk',
+    name:'james tozzi',
     avatar:imageworker
 
     
@@ -16,7 +16,7 @@ const employeeData = [
 
 {
 
-    name:'',
+    name:'celia krull',
     avatar:imagefour
 
   
@@ -25,7 +25,7 @@ const employeeData = [
 
 {
 
-    name:'',
+    name:'diego rodrigo',
   
     avatar:imageone
 
@@ -33,7 +33,7 @@ const employeeData = [
 
 {
 
-    name:'',
+    name:'achibong ebele',
     avatar:imagetwo
   
 
@@ -41,7 +41,7 @@ const employeeData = [
 
 {
 
-    name:'',
+    name:'anastasia grace',
     avatar:imagethree
    
 

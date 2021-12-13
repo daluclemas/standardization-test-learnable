@@ -21,7 +21,6 @@
 
 form{
     width:80%;
-    border: 1px hidden green;
     padding: 0;
     margin-bottom:8px;
 
@@ -40,6 +39,7 @@ form{
     border: none;
     background: transparent;
     padding-left: 5px;
+		width: 100%;
 }
 
 .fa-search{
@@ -49,6 +49,7 @@ form{
 .fourGreyBars{
     width: 100%;
     display: flex;
+    margin-bottom: 30px;
 }
 
 .greyBars{
@@ -60,3 +61,123 @@ form{
     margin-right: 5px;
 
 }
+
+.imagCards{
+
+	border: 2px hidden orange;
+	width: 100%;
+	height:300px;
+	overflow-y: scroll;
+	padding: 2% 1%;
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+
+}
+
+.staffInfoDiv{
+  border: 1px hidden blue;
+	width: 70%;
+	margin: 0 auto 20px;
+	grid-column: span 12;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 0 20px;
+	background:white;
+	border-radius: 5px;
+	box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+
+.avatarContainer{
+
+	width:50px;
+	height:50px;
+	margin: auto;
+
+}
+
+.avatarContainer img{
+	width: 100%;
+	height: 100%;
+}
+
+.staffInfoDiv h5{
+	width: 100%;
+	text-align: center;
+	text-transform: capitalize;
+	margin-top: 10px;
+
+}
+
+.staffInfoDiv .cardsBar{
+	width: 132px;
+	height: 11px;
+	border-radius: 22px;
+	background: rgba(244,245,247,1);
+	margin: 20px auto 10px;
+}
+
+@media(min-width: 576px){
+	.staffInfoDiv{
+		
+		grid-column: span 6;
+		width: 80%;
+		
+		
+	}
+
+	
+
+	
+.avatarContainer{
+
+	width:70px;
+	height:70px;
+
+
+}
+
+
+}
+
+@media(min-width: 768px){
+	.staffInfoDiv{
+		
+		width: 75%;
+		
+	}
+
+	.imagCards{
+		height:250px;
+	}
+
+	.inputContainer{
+		width: 80%;
+		padding-right:10px;
+	}
+
+}
+
+@media(min-width: 992px){
+	.staffInfoDiv{
+	
+		grid-column: span 4;
+		width: 90%;
+		
+	}
+
+	.inputContainer{
+		width: 70%
+	}
+
+}
+
+@media(min-width: 1200px){
+	.staffInfoDiv{
+		grid-column: span 3;
+		width: 90%;
+		
+	}
+
+}
+
+
