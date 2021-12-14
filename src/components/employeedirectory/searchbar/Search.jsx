@@ -5,17 +5,42 @@ import './Search.css';
 
 const Search = () => {
 
-	const [employeeInfo, setEmployeeInfo] = useState(employeeData);
+	const [employeeInfo, setEmployeeInfo] = useState([]);
 
 	const [values, setValues] = useState('');
+
+	const [filtered, setFiltered] = useState([]);
+
+	useEffect(()=>{
+
+		setEmployeeInfo(employeeData);
+	},[]);
 
 	const handleClick = (e) =>{
 
 		e.preventDefault();
 	}
 
+	const handleSearch =(searchItem)=>{
+
+		setValues(searchItem);
+
+		if (searchItem !== ''){
+			
+			const filteredData = employeeInfo.filter(item=>{
+				return item.name.toLowerCase().includes(searchItem.toLowerCase());
+			});
+
+			setFiltered(filteredData);
+		}else{
 
 
+			setFiltered(employeeInfo);
+		}
+
+	}
+
+	
 
 
     return (
@@ -29,7 +54,7 @@ const Search = () => {
 
 						<div className="inputContainer">
 							
-							<input type="text" value={values} placeholder="search..." onChange={(e)=>setValues(e.target.value)} />
+							<input type="text" value={values} placeholder="search..." onChange={(e)=>handleSearch(e.target.value)} />
 
 							<div className="searchicon">
 								<i className="fas fa-search"></i>
@@ -46,13 +71,21 @@ const Search = () => {
 					</div>
 
 					<div className="imagCards">
-						{employeeInfo.map((items, index)=>{
-							
-							return (
-								<EmployeeCards items={items} key={index} />
-							);
 
-						})}
+						{values.length > 1 ? 
+							filtered.map((items,index)=>{
+								return (
+									<EmployeeCards items={items} key={index} />
+								);
+							})
+
+						:
+							employeeInfo.map((items,index)=>{
+								return (
+									<EmployeeCards items={items} key={index} />
+								);
+							})
+						}
 					</div>
 
             
