@@ -54,7 +54,7 @@ form{
 
 .greyBars{
 
-    width: 59px;
+    width: 70%;
     height: 6px;
     background: rgba(244,245,247,1);
     border-radius: 71px;
@@ -126,6 +126,7 @@ form{
 	}
 
 	
+	
 
 	
 .avatarContainer{
@@ -155,6 +156,10 @@ form{
 		padding-right:10px;
 	}
 
+	.greyBars{
+		width: 70%;
+	}
+
 }
 
 @media(min-width: 992px){
@@ -167,6 +172,10 @@ form{
 
 	.inputContainer{
 		width: 70%
+	}
+
+	.greyBars{
+		width: 60%;
 	}
 
 }
