@@ -1,0 +1,20 @@
+.companiesImage{
+    border: 2px hidden green;
+    width: 90%;
+    margin: 30px auto 10px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+   
+}
+
+.companiesImageContainer{
+    width:150px;
+    height: 100px;
+    
+}
+
+.companiesImageContainer img{
+    width: 100%;
+    height:100%;
+}

@@ -1,20 +1,18 @@
 import React from 'react';
-import LeftNav from './directorynav/LeftNav';
-import RightNav from './directorynav/RightNav';
+
 import './EmployeeDirectory.css'
-import Search from './searchbar/Search';
+
+import employeedirectory from '../assets/std/employeedirectory.svg'
 
 
 const EmployeeDirectory = () => {
     return (
         <div className="employeeDirectory">
 
-            <div className="navigationContainer">
-                <LeftNav />
-                <RightNav />
-            </div>
+            <div className="photoContainer">
 
-            <Search />
+                <img src={employeedirectory} alt="employeedirectory" />
+            </div>
             
         </div>
     )

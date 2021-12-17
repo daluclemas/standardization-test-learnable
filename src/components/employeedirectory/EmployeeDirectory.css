@@ -5,16 +5,13 @@
     flex-direction: column;
     width: 85%;
     margin: 20px auto;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+   
 
 }
 
-.navigationContainer{
-    
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    background: white;
-    align-items: center;
-    padding: 5px;
+@media(min-width: 768px){
+    .employeeDirectory{
+        width: 70%;
+    }
 }
+

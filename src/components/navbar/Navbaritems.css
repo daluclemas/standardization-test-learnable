@@ -68,7 +68,7 @@ nav{
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid ; */
+    
 }
 
 .unorderedLists{
@@ -258,7 +258,6 @@ nav{
     .signInContainer{
        
         margin: 0px auto 20px;
-        /* border: 3px solid blue; */
     }
 
 
