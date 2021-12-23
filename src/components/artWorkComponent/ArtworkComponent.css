@@ -78,8 +78,8 @@
 @media(min-width:768px){
 
     .imgContainer{
-        border: 2px hidden black;
-        /* height: 0; */
+       border: 2px hidden black;
+       
     }
 
     .headerText{

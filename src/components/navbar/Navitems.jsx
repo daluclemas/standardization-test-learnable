@@ -34,7 +34,12 @@ const Navitems = () => {
                         
                 	</h3>
 
-									<img src={re} alt="imageoflogo" className="displayImage" />
+									{/* <img src={re} alt="imageoflogo" className="displayImage" /> */}
+
+									<Link to ='/'>
+
+										<img src={re} alt="imageoflogo" className="displayImage" />
+									</Link>
 
             		</div>
 
