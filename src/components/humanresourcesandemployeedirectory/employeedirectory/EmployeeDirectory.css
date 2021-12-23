@@ -1,0 +1,30 @@
+.employeedirectoryContainer{
+    border: 1px hidden brown;
+    width: 100%;
+}
+
+.imgContainer{
+    width:90%;
+    border: 1px hidden red;
+    padding:0;
+    margin: auto;
+
+}
+
+.imgContainer img{
+    width: 100%;
+    filter: drop-shadow(4px 4px 10px grey);
+   
+}
+
+@media(min-width: 768px){
+    .imgContainer{
+        height: 500px;
+    }
+
+    .imgContainer img{
+        height: 100%;
+        
+    }
+
+}

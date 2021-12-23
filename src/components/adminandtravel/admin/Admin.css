@@ -1,0 +1,121 @@
+.admin{
+    border: 1px hidden red;
+    background: transparent;
+    width: 95%;
+    margin: auto;
+    padding: 2% 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.admintextcontainer{
+    border: 2px hidden purple;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.admintextcontainer h1{
+
+    width: 100%;
+    line-height: 1.5;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+
+}
+
+.admintextcontainer p::first-letter{
+    text-transform: uppercase;
+}
+
+.admintextcontainer p{
+    font-weight: 500;
+    line-height: 1.5;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.travelandasset{
+    border: 1px hidden green;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.travelandassetsection{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin-bottom: 20px;
+}
+
+.photoContainer{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.photoContainer img{
+    width: 100%;
+    height: 100%;
+}
+
+.textsection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.textsection h3{
+    margin-bottom:10px;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+.textsection p::first-letter{
+    text-transform: uppercase;
+}
+
+.textsection p{
+    font-weight: 500;
+    line-height: 1.5;
+    width: 100%;
+}
+
+@media(min-width:768px){
+    .admin{
+        width: 90%
+    }
+}
+
+
+@media(min-width: 992px){
+    .admin{
+      
+        flex-direction:row;
+        align-items:center;
+    }
+
+    .admintextcontainer{
+       
+        margin-bottom: 0;
+    }
+
+    .travelandasset{
+        width: 100%;
+        margin:0;
+        flex-direction: row;
+    }
+
+    .textsection p{
+        padding-right: 2%;
+    }
+
+  
+
+}

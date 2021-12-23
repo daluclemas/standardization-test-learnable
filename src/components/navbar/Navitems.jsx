@@ -2,10 +2,12 @@ import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import React, {useState} from 'react'
 import About from './routepaths/About';
 import Features from './routepaths/Features';
-import Companyname from './routepaths/Companyname';
+import Companyname from './routepaths/LandingPage';
 import Signin from '../signup-login/Signin';
 import re from '../assets/std/re.svg';
 import './Navbaritems.css'
+import LandingPage from './routepaths/LandingPage';
+import ErrorPage from './routepaths/ErrorPage';
 
 
 const Navitems = () => {
@@ -83,15 +85,17 @@ const Navitems = () => {
 
             <Routes>
 
-              <Route path="/" exact element={ <Companyname />} component={Companyname} />
+              <Route path="/" exact element={ <LandingPage />} />
                  
-							<Route path='/features' component={Features} element={<Features />} />
+							<Route path='/features'  element={<Features />} />
 									
-							<Route path='/about' element={	<About />} component={About} />
+							<Route path='/about' element={	<About />}  />
 								
-							<Route path='/signUp' element={<Signin />} component={Signin} />
+							<Route path='/signUp' element={<Signin />}  />
 									
-							<Route path='/signin' element={<Signin />} component={Signin} />
+							<Route path='/signin' element={<Signin />} />
+
+							<Route path='*' element={<ErrorPage /> } />
 									
             </Routes>
 

@@ -1,0 +1,29 @@
+.companieslogos{
+    border: 1px hidden grey;
+    display: flex;
+    flex-flow:row wrap;
+    align-items: flex-end;
+    justify-content: center;
+    margin: auto;
+    width: 95%;
+}
+
+.companylogo{
+    width:150px;
+    height:100px;
+    margin-right:20px;  
+}
+
+.companylogo img{
+    width: 100%;
+    height: 100%;
+}
+
+
+@media(min-width:992px){
+
+    .companieslogos{
+      
+        width: 90%;
+    }
+}

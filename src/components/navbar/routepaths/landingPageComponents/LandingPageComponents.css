@@ -1,0 +1,19 @@
+.landingPageContainer{
+    border: 4px hidden red;
+    width: 95%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-column: span 12;
+    
+}
+
+@media(min-width:768px){
+
+    .landingPageContainer{
+        width: 90%;
+        margin:10px auto;
+    }
+
+}

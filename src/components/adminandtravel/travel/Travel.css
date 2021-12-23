@@ -1,0 +1,27 @@
+.travelcontainer{
+    border: 1px hidden greenyellow;
+    width: 100%;
+    background: transparent;
+    margin: 20px auto;
+}
+
+.travelimagecontainer{
+    border:1px hidden blue;
+    width: 90%;
+    height:300px;
+    margin: auto;
+}
+
+.travelimagecontainer img{
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(4px 4px 10px grey);
+}
+
+@media(min-width:768px){
+
+    .travelimagecontainer{
+        height:470px;
+    }
+    
+}
