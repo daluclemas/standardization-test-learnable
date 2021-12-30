@@ -4,10 +4,12 @@ import About from './routepaths/About';
 import Features from './routepaths/Features';
 import Companyname from './routepaths/LandingPage';
 import Signin from '../signup-login/Signin';
+import Login from '../signup-login/Login'
 import re from '../assets/std/re.svg';
 import './Navbaritems.css'
 import LandingPage from './routepaths/LandingPage';
 import ErrorPage from './routepaths/ErrorPage';
+import Dashboard from '../signup-login/Dashboard';
 
 
 const Navitems = () => {
@@ -98,7 +100,9 @@ const Navitems = () => {
 								
 							<Route path='/signUp' element={<Signin />}  />
 									
-							<Route path='/signin' element={<Signin />} />
+							<Route path='/signin' element={<Login />} />
+
+							<Route path='/dashboard' element={<Dashboard />} />
 
 							<Route path='*' element={<ErrorPage /> } />
 									

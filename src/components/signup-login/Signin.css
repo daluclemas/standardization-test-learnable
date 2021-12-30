@@ -1,0 +1,30 @@
+.signupcontainer{
+    height: 90vh;
+    width: 90%;
+    margin: auto;
+    border: 1px hidden red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.signupcontainer h1{
+    border: 1px hidden green;
+    width:90%;
+    margin:0 auto 20px;
+    text-align: center;
+}
+
+.signupcontainer h1::first-letter{
+    text-transform: uppercase;
+}
+
+.signupcontainer p{
+    width: 100%;
+    text-align: center;
+}
+
+.signupcontainer p::first-letter{
+    text-transform: uppercase;
+}
