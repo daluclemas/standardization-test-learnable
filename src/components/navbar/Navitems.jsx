@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
-import React, {useState} from 'react'
+import { BrowserRouter as Router, Link, Routes, Route, useNavigate } from 'react-router-dom';
+import React, {useState, useContext, useEffect} from 'react'
 import About from './routepaths/About';
 import Features from './routepaths/Features';
 import Companyname from './routepaths/LandingPage';
@@ -13,6 +13,7 @@ import Dashboard from '../signup-login/Dashboard';
 import { AuthProvider } from '../signup-login/Mycontext';
 
 
+
 const Navitems = () => {
 
 	const [navToggle, setNavToggle] = useState(false);
@@ -21,8 +22,13 @@ const Navitems = () => {
 
 	const handleClick = () =>{
 
-		setNavToggle(!navToggle);
+		setNavToggle(true);
+		// setNavToggle(!navToggle);
 
+	}
+
+	const timesClick = () =>{
+		setNavToggle(false)
 	}
 
 
@@ -56,6 +62,10 @@ const Navitems = () => {
             		{/* navtems */}
             		<div className={`listGroup  ${navToggle ? 'active':'' }`}>
 
+									<div className="timesContainer" style={{width:"100%", marginBottom:'10px', paddingRight:'50px',paddingTop:'20px'}}>
+										<i className="fas fa-times" onClick={timesClick} style={{textAlign:'right',width:"100%"}}></i>
+									</div>
+
                 	<ul className="unorderedLists">
                     <li>
                       <Link to = '/features' style={{textDecoration:'none', color:'var(--dark-blue-color)', textTransform: 'capitalize'}}> features</Link>
@@ -82,6 +92,8 @@ const Navitems = () => {
 											<button className="signIn">
                       	<Link to ='/signin' style={{textDecoration:'none', color:'white'}}>sign in</Link>
                     	</button>
+
+											
 
 										</div>
 

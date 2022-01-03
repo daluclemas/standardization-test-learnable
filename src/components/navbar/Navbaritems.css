@@ -65,6 +65,11 @@ nav{
     width:70%;
 }
 
+.timesContainer{
+    display: none;
+}
+
+
 .listGroup{
     display: flex;
     width: 100%;
@@ -183,6 +188,7 @@ nav{
     nav{
         justify-content: space-between;
         width: 95%;
+       
     }
 
     .icon{
@@ -199,6 +205,13 @@ nav{
         display: block;
     }
 
+    .timesContainer{
+        display: block;
+        cursor: pointer;
+    }
+
+
+    
     .listGroup{
         display: none;
         flex-direction: column;
