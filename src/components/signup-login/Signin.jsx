@@ -1,48 +1,57 @@
-import React, { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState, useRef, useContext } from 'react'
+import {Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from './Mycontext'
 import './Signin.css'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from '@firebase/auth';
-import {auth} from './firebase/Firebase'
+
 
 const Signin = () => {
-  const [email,setEmail] = useState('');
 
-  const [passWord, setPassWord] = useState('');
+  const {register,user} = useContext(AuthContext);
+
+  let navigate = useNavigate();
+
+  const emailRef = useRef();
+
+  const passWordRef = useRef();
+
+  const confirmPasswordRef = useRef();
+
+  const [email, setEmail] = useState('');
+
+  const [ passWord, setPassWord] = useState('');
 
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const [user, setUser] = useState('');
+  const [error, setError] = useState('');
 
   const [loading, setLoading] = useState(false);
 
+  const signup = (e)=>{
+
+    e.preventDefault();
+
+    if(passWordRef.current.value !==  confirmPasswordRef.current.value){
+
+      return setError('check that your passwords match');
 
 
-  const register = async () => {
+    }
+    
+    
+    try{
+ 
+      register(emailRef.current.value,passWordRef.current.value);
+
+      navigate('/dashboard');
+      
+    }catch{
+      setError('user not found');
+    }
 
     setLoading(true);
 
-    
-    try{
-      const user = createUserWithEmailAndPassword(auth,email,passWord);
-    
-    }catch(err){
-      alert(err.message, err.code)
-    }
-
-    setLoading(false);
+  
   }
-
-  const logout = async ()=>{
-
-    await signOut(auth)
-
-
-  }
-
-  onAuthStateChanged(auth,(currentuser)=>{
-
-    setUser(currentuser);
-  });
 
   
     return (
@@ -50,12 +59,22 @@ const Signin = () => {
 
           <h1>sign up</h1>
 
-            <form onSubmit={(e)=>e.preventDefault()}>
+            <form onSubmit={signup}>
+
+            {error && <p style={{border:'2px solid red',
+                    background:'rgba(255,0,0,0.3)',
+                    borderRadius:'5px',
+                    padding:'10px',
+                    width:'100%',
+                    margin:'20px auto'
+                }}>{error}</p>}
+
+
                 <div className="inputContainer">
                   <label htmlFor="email"> e-mail</label>
 
                   <div className="input">
-                    <input type="email" onChange={(e)=>setEmail(e.target.value)} placeholder='enter e-mail...' />
+                    <input type="email" onChange={(e)=>setEmail(e.target.value)} placeholder='enter e-mail...' ref={emailRef} />
                   </div>
                   
                 </div>
@@ -64,7 +83,7 @@ const Signin = () => {
                   <label htmlFor="password">password</label>
 
                   <div className="input">
-                    <input type="password" onChange={(e)=>setPassWord(e.target.value)} placeholder="enter password..." />
+                    <input type="password" onChange={(e)=>setPassWord(e.target.value)} placeholder="enter password..." ref={passWordRef} />
                   </div>
                   
 								</div>
@@ -73,25 +92,23 @@ const Signin = () => {
                   <label htmlFor="confirmpassword">confirm password</label>
 
                   <div className="input">
-                    <input type="password" onChange={(e)=>setConfirmPassword(e.target.value)} placeholder="confirm password..."  />
+                    <input type="password" onChange={(e)=>setConfirmPassword(e.target.value)} placeholder="confirm password..." ref={confirmPasswordRef} />
                   </div>
 									
 								</div>
 
 								<div className="btnContainer">
-									<button className="btnlogin" onClick={()=>register()} disabled={loading || user != null}>sign up</button>
+									{/* <button className="btnlogin" onClick={()=>register()} disabled={loading || user != null}>sign up</button> */}
+
+                  <button className="btnlogin"  disabled={loading}>sign up</button>
 								</div>
 
-                <div className="btnContainer">
-                  <button className="btnlogin" onClick={logout}>log out</button>
-                </div>
+                
             </form>
 
             <p>already have an account? <Link to='/signin' style={{color:'var(--blue-color)', textTransform:'capitalize', textDecoration:'none'}}>log in</Link></p>
 
-            <p>current user:
-              {user?.email}
-            </p>
+        
         </div>
     )
 }

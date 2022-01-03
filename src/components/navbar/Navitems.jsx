@@ -10,6 +10,7 @@ import './Navbaritems.css'
 import LandingPage from './routepaths/LandingPage';
 import ErrorPage from './routepaths/ErrorPage';
 import Dashboard from '../signup-login/Dashboard';
+import { AuthProvider } from '../signup-login/Mycontext';
 
 
 const Navitems = () => {
@@ -90,23 +91,28 @@ const Navitems = () => {
 
             	</nav>
 
-            <Routes>
+            <AuthProvider>
+							<Routes>
 
-              <Route path="/" exact element={ <LandingPage />} />
-                 
-							<Route path='/features'  element={<Features />} />
-									
-							<Route path='/about' element={	<About />}  />
-								
-							<Route path='/signUp' element={<Signin />}  />
-									
-							<Route path='/signin' element={<Login />} />
+								<Route path="/" exact element={ <LandingPage />} />
+	 
+								<Route path='/features'  element={<Features />} />
+		
+								<Route path='/about' element={	<About />}  />
 
-							<Route path='/dashboard' element={<Dashboard />} />
 
-							<Route path='*' element={<ErrorPage /> } />
-									
-            </Routes>
+	
+								<Route path='/signUp' element={<Signin />}  />
+		
+								<Route path='/signin' element={<Login />} />
+
+								<Route path='/dashboard' element={<Dashboard />} />
+
+								<Route path='*' element={<ErrorPage /> } />
+		
+							</Routes>
+							
+						</AuthProvider>
 
         	</>
     )
