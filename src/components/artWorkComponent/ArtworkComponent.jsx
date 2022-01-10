@@ -2,27 +2,60 @@ import React from 'react';
 import './ArtworkComponent.css';
 import person from '../assets/std/person.svg';
 
+import {motion} from 'framer-motion'
+
 const ArtworkComponent = () => {
+
+  const parentVariant = {
+		visible:{
+			opacity:1,
+			transition:{
+				when:"beforeChildren",
+				staggerChildren:0.5,
+				duration:1
+			}
+		},
+
+		hidden:{
+			opacity:0
+			
+		}
+	}
+
+	const kidVariant={
+		visible:{
+			opacity:1
+		},
+		
+		hidden:{
+			opacity:0
+		}
+	}
+
+
+
+
+
     return (
-        <div className='artworkContainer'>
+        <motion.div className='artworkContainer'  variants={parentVariant} animate="visible" initial="hidden">
 
-          <div className="textContainer">
+          <motion.div className="textContainer">
 
-            <h1 className="headerText">throw paper work into the trash where it belongs.</h1>
+            <motion.h1 className="headerText" variants={kidVariant}>throw paper work into the trash where it belongs.</motion.h1>
 
-            <p className="headerParagraph">
+            <motion.p className="headerParagraph" variants={kidVariant}>
               eliminate all hassle involved in managing people operations by managing it.
-            </p>
+            </motion.p>
 
-          </div>
+          </motion.div>
 
-          <div className="imgContainer">
+          <motion.div className="imgContainer">
 
-            <img src={person} alt="person-logo" />
+            <motion.img src={person} alt="person-logo" variants={kidVariant} />
 
-          </div>
+          </motion.div>
             
-        </div>
+        </motion.div>
     )
 }
 

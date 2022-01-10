@@ -37,7 +37,8 @@ const Navitems = () => {
 			opacity:1,
 			transition:{
 				when:"beforeChildren",
-				staggerChildren:0.5
+				staggerChildren:0.3,
+				duration:1
 			}
 		},
 
