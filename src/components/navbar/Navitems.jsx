@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Link, Routes, Route, useNavigate } from 'react
 import React, {useState, useContext, useEffect} from 'react'
 import About from './routepaths/About';
 import Features from './routepaths/Features';
-import Companyname from './routepaths/LandingPage';
+// import Companyname from './routepaths/LandingPage';
 import Signin from '../signup-login/Signin';
 import Login from '../signup-login/Login'
 import re from '../assets/std/re.svg';
@@ -11,6 +11,7 @@ import LandingPage from './routepaths/LandingPage';
 import ErrorPage from './routepaths/ErrorPage';
 import Dashboard from '../signup-login/Dashboard';
 import { AuthProvider } from '../signup-login/Mycontext';
+import {motion} from 'framer-motion'
 
 
 
@@ -31,12 +32,40 @@ const Navitems = () => {
 		setNavToggle(false)
 	}
 
+	const parentVariant = {
+		visible:{
+			opacity:1,
+			transition:{
+				when:"beforeChildren",
+				staggerChildren:0.5
+			}
+		},
+
+		hidden:{
+			opacity:0
+			
+		}
+	}
+
+	const kidVariant={
+		visible:{
+			opacity:1
+		},
+		
+		hidden:{
+			opacity:0
+		}
+	}
+
 
     return (
         		<>
-            	<nav>
+            	<motion.nav variants={parentVariant}
+								animate= "visible" 
+								initial = "hidden"
+							>
                 {/* company name */}
-                <div className="companyNameandLogo">
+                <motion.div className="companyNameandLogo" variants={kidVariant}>
 
                   <h3 className="companyName">
                     <Link to='/' style={{textDecoration:'none', color:'var(--blue-color)'}}>resource edge</Link>
@@ -50,44 +79,44 @@ const Navitems = () => {
 										<img src={re} alt="imageoflogo" className="displayImage" />
 									</Link>
 
-            		</div>
+            		</motion.div>
 
             		{/* hamburgericon */}
-            		<div className="icon" onClick={handleClick}>
+            		<motion.div className="icon" onClick={handleClick} variants={kidVariant}>
                 	<div className={`hamburgerIcon ${click}`}></div>
                 	<div className={`hamburgerIcon ${click}`}></div>
                 	<div className={`hamburgerIcon ${click}`}></div>
-            		</div>
+            		</motion.div>
 
             		{/* navtems */}
-            		<div className={`listGroup  ${navToggle ? 'active':'' }`}>
+            		<motion.div className={`listGroup  ${navToggle ? 'active':'' }`} variants={parentVariant}>
 
-									<div className="timesContainer" style={{width:"100%", marginBottom:'10px', paddingRight:'50px',paddingTop:'20px'}}>
+									<motion.div className="timesContainer" style={{width:"100%", marginBottom:'10px', paddingRight:'50px',paddingTop:'20px'}} variants={kidVariant}>
 										<i className="fas fa-times" onClick={timesClick} style={{textAlign:'right',width:"100%"}}></i>
-									</div>
+									</motion.div>
 
-                	<ul className="unorderedLists">
-                    <li>
+                	<motion.ul className="unorderedLists">
+                    <motion.li variants={kidVariant}>
                       <Link to = '/features' style={{textDecoration:'none', color:'var(--dark-blue-color)', textTransform: 'capitalize'}}> features</Link>
-                    </li>
+                    </motion.li>
 
-                    <li>
+                    <motion.li variants={kidVariant}>
                       <Link to = '/about' style={{textDecoration:'none', color:'var(--dark-blue-color)', textTransform: 'capitalize'}}> About</Link>
-                    </li>
-                	</ul>
+                    </motion.li>
+                	</motion.ul>
 
-                	<div className="btnContainers">
+                	<motion.div className="btnContainers">
 
-                    <div className="signUpContainer">
+                    <motion.div className="signUpContainer" variants={kidVariant}>
 
 											<button className="signUp">
                       	<Link to ='/signup' style={{textDecoration:'none', color:'var(--dark-blue-color)'}}>sign up</Link>
                     	</button>
 
-										</div>
+										</motion.div>
 
                     
-										<div className="signInContainer">
+										<motion.div className="signInContainer" variants={kidVariant}>
 
 											<button className="signIn">
                       	<Link to ='/signin' style={{textDecoration:'none', color:'white'}}>sign in</Link>
@@ -95,13 +124,13 @@ const Navitems = () => {
 
 											
 
-										</div>
+										</motion.div>
 
-                	</div>
+                	</motion.div>
 
-            		</div>
+            		</motion.div>
 
-            	</nav>
+            	</motion.nav>
 
             <AuthProvider>
 							<Routes>

@@ -216,7 +216,8 @@ nav{
         display: none;
         flex-direction: column;
         position: absolute;
-        top:9%;
+        /* top:9%; */
+        top:-100%;
         border-bottom: 1px solid var(--dark-blue-color);
         border-right: 1px solid var(--dark-blue-color);
         border-radius: 15px;
@@ -226,6 +227,7 @@ nav{
         margin: auto;
         justify-content: flex-start;
         background-color: white;
+       
            
     }
 
@@ -234,6 +236,8 @@ nav{
     .listGroup.active{
         display: flex;
         z-index: 2;
+        top:1%;
+       
     }
 
     .unorderedLists{
